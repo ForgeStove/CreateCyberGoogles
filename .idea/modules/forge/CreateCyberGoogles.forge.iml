@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="AdditionalModuleElements">
+    <content url="file://$MODULE_DIR$/../../../forge" dumb="true">
+      <excludeFolder url="file://$MODULE_DIR$/../../../forge/run" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../forge/run/defaultconfigs" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../forge/run/logs/telemetry" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../forge/run/mods" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../forge/run/resourcepacks" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../forge/run/resources" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../forge/run/saves/1/datapacks" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../forge/run/schematics" />
+    </content>
+  </component>
+</module>

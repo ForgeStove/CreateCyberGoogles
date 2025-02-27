@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="AdditionalModuleElements">
+    <content url="file://$MODULE_DIR$/../../../fabric" dumb="true">
+      <excludeFolder url="file://$MODULE_DIR$/../../../fabric/run" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../fabric/run/defaultconfigs" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../fabric/run/logs/telemetry" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../fabric/run/mods" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../fabric/run/resourcepacks" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../fabric/run/resources" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../fabric/run/saves/1/datapacks" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../fabric/run/saves/1/serverconfig" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../fabric/run/schematics" />
+    </content>
+  </component>
+</module>
