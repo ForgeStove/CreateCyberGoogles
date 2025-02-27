@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" factoryName="Application" name="Minecraft Client (:fabric)" type="Application">
+    <option name="MAIN_CLASS_NAME" value="dev.architectury.transformer.TransformerRuntime"/>
+    <module name="create_cyber_googles.fabric.main"/>
+    <option name="PROGRAM_PARAMETERS" value=""/>
+    <option name="VM_PARAMETERS" value="-Dfabric.dli.config=C:\Utils\Source\Java\CreateCyberGoogles\fabric\.gradle\loom-cache\launch.cfg -Dfabric.dli.env=client -Dfabric.dli.main=net.fabricmc.loader.impl.launch.knot.KnotClient -Darchitectury.main.class=C:\Utils\Source\Java\CreateCyberGoogles\fabric\.gradle\architectury\.main_class -Darchitectury.runtime.transformer=C:\Utils\Source\Java\CreateCyberGoogles\fabric\.gradle\architectury\.transforms -Darchitectury.properties=C:\Utils\Source\Java\CreateCyberGoogles\fabric\.gradle\architectury\.properties -Djdk.attach.allowAttachSelf=true -javaagent:C:\Utils\Source\Java\CreateCyberGoogles\.gradle\architectury\architectury-transformer-agent.jar"/>
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/fabric/run/"/>
+    <method v="2">
+      <option enabled="true" name="Make"/>
+    </method>
+    <envs>
+      
+    </envs>
+    <shortenClasspath name="ARGS_FILE"/>
+  <classpathModifications/></configuration>
+</component>

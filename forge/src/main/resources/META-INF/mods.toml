@@ -1,0 +1,33 @@
+modLoader = "lowcodefml"
+loaderVersion = "0"
+issueTrackerURL = "https://github.com/ForgeStove/CreateCyberGoogles/issues"
+license = "GNU AGPL 3.0"
+
+[[mods]]
+modId = "create_cyber_googles"
+version = "${version}"
+displayName = "CreateCyberGoogles"
+authors = "ForgeStove"
+description = '''A mod that allows players to use the features of the goggles without them.'''
+logoFile = "icon.png"
+
+[[dependencies.create_cyber_googles]]
+modId = "forge"
+mandatory = true
+versionRange = "0"
+ordering = "NONE"
+side = "CLIENT"
+
+[[dependencies.create_cyber_googles]]
+modId = "minecraft"
+mandatory = true
+versionRange = "0"
+ordering = "NONE"
+side = "CLIENT"
+
+[[dependencies.create_cyber_googles]]
+modId = "create"
+mandatory = true
+versionRange = "0"
+ordering = "NONE"
+side = "CLIENT"

@@ -1,0 +1,86 @@
+plugins {
+    id 'dev.architectury.loom' version '1.9-SNAPSHOT' apply false
+    id 'architectury-plugin' version '3.4-SNAPSHOT'
+    id 'com.github.johnrengelman.shadow' version '8.1.1' apply false
+    id "com.hypherionmc.modutils.modfusioner" version "1.0.+"
+}
+architectury { minecraft = minecraft_version }
+allprojects {
+    group = maven_group
+    version = mod_version
+}
+subprojects {
+    apply plugin: 'dev.architectury.loom'
+    apply plugin: 'architectury-plugin'
+    apply plugin: 'maven-publish'
+    base {
+        // Set up a suffixed format for the mod jar names, e.g. `example-fabric`.
+        archivesName = "$archives_name-$project.name"
+    }
+    repositories {
+        maven { url = "https://maven.tterrag.com/" } // Flywheel on both, Create and Registrate on forge
+        // Add repositories to retrieve artifacts from in here.
+        // You should only use this when depending on other mods because
+        // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
+        // See https://docs.gradle.org/current/userguide/declaring_repositories.html
+        // for more information about repositories.
+    }
+    dependencies {
+        minecraft "net.minecraft:minecraft:$minecraft_version"
+        mappings loom.officialMojangMappings()
+    }
+    java {
+        // Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
+        // if it is present.
+        // If you remove this line, sources will not be generated.
+        withSourcesJar()
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+    tasks.withType(JavaCompile).configureEach { it.options.release = 17 }
+    // Configure Maven publishing.
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                artifactId = base.archivesName.get()
+                from components.java
+            }
+        }
+        // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
+        repositories {
+            // Add repositories to publish to here.
+            // Notice: This block does NOT have the same function as the block in the top level.
+            // The repositories here will be used for publishing your artifact, not for
+            // retrieving dependencies.
+        }
+    }
+}
+fusioner {
+    packageGroup = project.group // Package group of the merged jar. For example com.mymod.awesome
+    mergedJarName = archives_name // The name of the output jar
+    outputDirectory = "artifacts" // Where the merged jar will be stored. Defaults to artifacts/fused
+    jarVersion = mod_version // The version of the mod/jar
+    // Forge Project
+    forge {
+        projectName = "Forge" // The name of the project that contains the forge code
+        inputTaskName = "jar" // The name of the build task for the forge project
+        // OR
+        // inputFile = "Forge/build/libs/MyMod-1.0.jar" // Use a custom jar input
+        // Mixin configuration files
+        // Only required if the plugin doesn't detect it directly
+        mixin "${mod_id}.mixins.json"
+        // Packages that need to be relocated to the specific platform
+        addRelocate "me.hypherionmc.mcdiscordformatter", "forge.me.hypherionmc.mcdiscordformatter"
+    }
+    // Fabric Project
+    fabric {
+        projectName = "Fabric" // The name of the project that contains the fabric code
+        inputTaskName = "remapJar" // The name of the build task for the fabric project
+        // OR
+        // inputFile = "Fabric/build/libs/MyMod-Fabric-1.0.jar" // Use a custom jar input
+        // Packages that need to be relocated to the specific platform
+        addRelocate "me.hypherionmc.mcdiscordformatter", "fabric.me.hypherionmc.mcdiscordformatter"
+    }
+    // Remove duplicate libraries or packages. Useful if you have shaded libraries in your mod
+    relocateDuplicate "com.hypherionmc.sdlink.shaded"
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/CreateCyberGoogles.common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/CreateCyberGoogles.common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/CreateCyberGoogles.common.main.iml" filepath="$PROJECT_DIR$/.idea/modules/common/CreateCyberGoogles.common.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/CreateCyberGoogles.common.test.iml" filepath="$PROJECT_DIR$/.idea/modules/common/CreateCyberGoogles.common.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fabric/CreateCyberGoogles.fabric.main.iml" filepath="$PROJECT_DIR$/.idea/modules/fabric/CreateCyberGoogles.fabric.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fabric/CreateCyberGoogles.fabric.test.iml" filepath="$PROJECT_DIR$/.idea/modules/fabric/CreateCyberGoogles.fabric.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/forge/CreateCyberGoogles.forge.main.iml" filepath="$PROJECT_DIR$/.idea/modules/forge/CreateCyberGoogles.forge.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/forge/CreateCyberGoogles.forge.test.iml" filepath="$PROJECT_DIR$/.idea/modules/forge/CreateCyberGoogles.forge.test.iml" />
+    </modules>
+  </component>
+</project>

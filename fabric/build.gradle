@@ -1,0 +1,50 @@
+plugins { id 'com.github.johnrengelman.shadow' }
+architectury {
+    platformSetupLoomIde()
+    fabric()
+}
+repositories {
+    // mavens for Create Fabric and dependencies
+    maven { url = "https://mvn.devos.one/releases" } // Porting Lib releases
+    maven { url = "https://mvn.devos.one/snapshots" } // Create and several dependencies
+    maven { url = "https://maven.jamieswhiteshirt.com/libs-release" } // Reach Entity Attributes
+    maven { url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven" } // Forge Config API Port
+    maven { // Fabric ASM for Porting Lib
+        url = "https://jitpack.io/"
+        content { includeGroupAndSubgroups("com.github") }
+    }
+    maven { url = "https://maven.shedaniel.me" } // Cloth Config, REI
+    maven { url = "https://maven.blamejared.com" } // JEI
+    maven { url = "https://maven.terraformersmc.com/releases" } // Mod Menu, EMI
+}
+configurations {
+    common {
+        canBeResolved = true
+        canBeConsumed = false
+    }
+    compileClasspath.extendsFrom common
+    runtimeClasspath.extendsFrom common
+    developmentFabric.extendsFrom common
+
+    // Files in this configuration will be bundled into your mod using the Shadow plugin.
+    // Don't use the `shadow` configuration from the plugin itself as it's meant for excluding files.
+    shadowBundle {
+        canBeResolved = true
+        canBeConsumed = false
+    }
+}
+dependencies {
+    modImplementation("net.fabricmc:fabric-loader:$fabric_loader_version")
+    common(project(path: ':common', configuration: 'namedElements')) { transitive false }
+    shadowBundle project(path: ':common', configuration: 'transformProductionFabric')
+    modImplementation("com.simibubi.create:create-fabric-$minecraft_version:$create_fabric_version")
+}
+processResources {
+    inputs.property 'version', project.version
+    filesMatching('fabric.mod.json') { expand version: project.version }
+}
+shadowJar {
+    configurations = [project.configurations.shadowBundle]
+    archiveClassifier = 'dev-shadow'
+}
+remapJar { getInputFile().set shadowJar.archiveFile }

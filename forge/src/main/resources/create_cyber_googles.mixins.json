@@ -1,0 +1,7 @@
+{
+  "required": true,
+  "package": "ForgeStove.create_cyber_googles.forge.mixin",
+  "client": [
+	"GogglesItemMixin"
+  ]
+}

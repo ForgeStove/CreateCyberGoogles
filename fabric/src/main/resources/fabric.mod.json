@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "create_cyber_googles",
+  "version": "${version}",
+  "name": "CreateCyberGoogles",
+  "description": "A mod that allows players to use the features of the goggles without them.",
+  "authors": [
+	"ForgeStove"
+  ],
+  "contact": {
+	"homepage": "https://modrinth.com/mod/create-cyber-googles"
+  },
+  "license": "AGPL-3.0",
+  "icon": "icon.png",
+  "mixins": [
+	"create_cyber_googles.mixins.json"
+  ]
+}
