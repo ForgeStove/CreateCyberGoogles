@@ -5,7 +5,9 @@
 /common/build/
 /fabric/.gradle/
 /fabric/build/
+/fabric/run/
 /fabric/build/classes/java/main/
 /forge/.gradle/
 /forge/build/
+/forge/run/
 /forge/build/classes/java/main/
