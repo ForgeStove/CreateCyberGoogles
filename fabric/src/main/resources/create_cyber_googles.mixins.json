@@ -3,5 +3,6 @@
   "package": "ForgeStove.create_cyber_googles.fabric.mixin",
   "client": [
 	"GogglesItemMixin"
-  ]
+  ],
+  "minVersion": "0"
 }
